@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Koyomi Web
+
+For now this is going to be the same as ADHD-para but developed with NextJS 14 App Router 
+
+Our first goal is to eventually get it to become a UL-like desktop helper app
 
 ## Getting Started
 
