@@ -7,7 +7,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <>
       <nav className="relative flex w-full items-center justify-between bg-gray-800 py-2 shadow-md">
         <div className="mx-auto flex w-full flex-wrap items-center justify-start">
-          <Link href="/" className="ml-2">
+          <Link href="/dashboard" className="ml-2">
             <KoyomiLogo />
           </Link>
         </div>
