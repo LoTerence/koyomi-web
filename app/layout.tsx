@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
+import { ThemeProvider } from '@/components/theme-provider';
 import { fontSans } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
 
@@ -24,7 +25,14 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
