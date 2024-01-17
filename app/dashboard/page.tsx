@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <section className="mt-4">
-      <h1 className={utilStyles.headingLg}>Dashboard</h1>
+      <h1 className={utilStyles.headingLg}>Dashboard - Launcher</h1>
     </section>
   );
 }
