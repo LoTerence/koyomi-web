@@ -1,17 +1,10 @@
 import Link from 'next/link';
 import { Menu as HamburgerIcon } from 'lucide-react';
 import KoyomiLogo from '@/components/koyomi-logo';
+import ProfileDropdown from '@/components/navbar/profileDropDown';
+
 import { ModeToggle } from '@/components/ui/mode-toggle';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
 import {
   Sheet,
   SheetContent,
@@ -52,23 +45,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="flex-grow"></div>
         <div className="relative flex items-center space-x-2 px-3">
           <ModeToggle />
-          <DropdownMenu>
-            <DropdownMenuTrigger>
-              <Avatar>
-                <AvatarImage src="/images/morty-profile.jpg" />
-                <AvatarFallback>CN</AvatarFallback>
-              </Avatar>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Profile</DropdownMenuItem>
-              <DropdownMenuItem>Billing</DropdownMenuItem>
-              <DropdownMenuItem>Team</DropdownMenuItem>
-              <DropdownMenuItem>Subscription</DropdownMenuItem>
-              <DropdownMenuItem>Log out</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <ProfileDropdown />
         </div>
       </nav>
 
