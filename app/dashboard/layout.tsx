@@ -16,6 +16,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <ModeToggle />
         </div>
       </nav>
+      <main className="container">{children}</main>
     </>
   );
 }

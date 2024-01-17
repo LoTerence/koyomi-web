@@ -6,8 +6,8 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main>
+    <section className="mt-4">
       <h1>Dashboard</h1>
-    </main>
+    </section>
   );
 }
