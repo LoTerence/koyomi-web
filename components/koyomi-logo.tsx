@@ -14,7 +14,7 @@ const KoyomiLogo = () => {
         alt="Cat-head Logo"
         loading="lazy"
       />
-      {/* <p className="ml-2 text-[44px]">Koyomi App</p> */}
+      <p className="ml-2 text-2xl">Koyomi AI</p>
     </div>
   );
 };
