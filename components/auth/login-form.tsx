@@ -15,6 +15,8 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 
+// todo: add login server function
+
 const formSchema = z.object({
   email: z.string().email(),
   password: z.string().min(6),
