@@ -27,6 +27,15 @@ export default function Home() {
       >
         <span>Log in to get started</span> <ArrowRight />
       </Link>
+      <Link
+        href="/dashboard"
+        className={cn(
+          'mt-6 flex items-center gap-5 self-start',
+          buttonVariants({ variant: 'default' }),
+        )}
+      >
+        <span>Go to Dashboard</span> <ArrowRight />
+      </Link>
       <div className="mt-6">
         <ModeToggle />
       </div>

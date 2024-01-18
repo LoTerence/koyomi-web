@@ -1,3 +1,10 @@
+/* 
+From nextjs-dashboard project
+- seed the vercel serverless postgres db with this initial data
+- goes with /lib/placeholder-data.js
+TODO: Delete this file later, after DB architecture is fully configured
+*/
+
 const { db } = require('@vercel/postgres');
 const {
   invoices,
