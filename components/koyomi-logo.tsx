@@ -8,7 +8,7 @@ const KoyomiLogo = () => {
         height={24}
         width={24}
         alt="Cat-head Logo"
-        loading="lazy"
+        priority
       />
       <p className="ml-2 text-2xl">Koyomi AI</p>
     </div>
