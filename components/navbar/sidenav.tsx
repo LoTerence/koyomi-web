@@ -1,23 +1,24 @@
-'use client';
-
 import Link from 'next/link';
-import { Menu as HamburgerIcon } from 'lucide-react';
+import {
+  Menu as HamburgerIcon,
+  Box as BoxIcon,
+  Rocket as RocketIcon,
+} from 'lucide-react';
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
 import KoyomiLogo from '@/components/koyomi-logo';
-import { buttonVariants } from '@/components/ui/button';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 export default function SideNav() {
   return (
@@ -27,27 +28,93 @@ export default function SideNav() {
       >
         <HamburgerIcon />
       </SheetTrigger>
-      <SheetContent className="w-full sm:w-60" side="left">
+      <SheetContent className="w-full p-0 sm:w-60" side="left">
         <SheetHeader>
-          <Link href="/dashboard" className="mb-3">
+          <Link
+            href="/dashboard"
+            className="mt-6 rounded-md p-4 hover:bg-accent hover:text-accent-foreground"
+          >
             <KoyomiLogo />
           </Link>
-          <SheetTitle className="text-sm">Main Menu</SheetTitle>
         </SheetHeader>
-        <Accordion type="single" collapsible>
-          <AccordionItem value="accordion-1-item-1">
-            <AccordionTrigger>Plugins</AccordionTrigger>
-            <AccordionContent>Age Calculator</AccordionContent>
-            <AccordionContent>Blog</AccordionContent>
-            <AccordionContent>Pomodoro Timer</AccordionContent>
+        <Accordion type="multiple">
+          <AccordionItem value="item-1" className="border-b-0">
+            <AccordionTrigger className="rounded-md px-4 hover:bg-accent hover:text-accent-foreground">
+              <div className="flex items-center space-x-4">
+                <span>
+                  <BoxIcon size={18} />
+                </span>
+                <span>Apps</span>
+              </div>
+            </AccordionTrigger>
+            <AccordionContent className="flex flex-col">
+              <Link
+                href="/"
+                className={cn(
+                  buttonVariants({ variant: 'ghost' }),
+                  'justify-start pl-12 hover:underline',
+                )}
+              >
+                Age Calculator
+              </Link>
+              <Link
+                href="/"
+                className={cn(
+                  buttonVariants({ variant: 'ghost' }),
+                  'justify-start pl-12 hover:underline',
+                )}
+              >
+                Blog
+              </Link>
+              <Link
+                href="/"
+                className={cn(
+                  buttonVariants({ variant: 'ghost' }),
+                  'justify-start pl-12 hover:underline',
+                )}
+              >
+                Pomodoro Timer
+              </Link>
+            </AccordionContent>
           </AccordionItem>
-        </Accordion>
-        <Accordion type="single" collapsible>
-          <AccordionItem value="accordion-2-item-1">
-            <AccordionTrigger>Launcher</AccordionTrigger>
-            <AccordionContent>Commands</AccordionContent>
-            <AccordionContent>Settings</AccordionContent>
-            <AccordionContent>More Plugins</AccordionContent>
+          <AccordionItem value="item-2" className="border-b-0">
+            <AccordionTrigger className="rounded-md px-4 hover:bg-accent hover:text-accent-foreground">
+              <div className="flex items-center space-x-4">
+                <span>
+                  <RocketIcon size={18} />
+                </span>
+                <span>Launcher</span>
+              </div>
+            </AccordionTrigger>
+            <AccordionContent className="flex flex-col">
+              <Link
+                href="/"
+                className={cn(
+                  buttonVariants({ variant: 'ghost' }),
+                  'justify-start pl-12 hover:underline',
+                )}
+              >
+                Commands
+              </Link>
+              <Link
+                href="/"
+                className={cn(
+                  buttonVariants({ variant: 'ghost' }),
+                  'justify-start pl-12 hover:underline',
+                )}
+              >
+                Settings
+              </Link>
+              <Link
+                href="/"
+                className={cn(
+                  buttonVariants({ variant: 'ghost' }),
+                  'justify-start pl-12 hover:underline',
+                )}
+              >
+                Plugins
+              </Link>
+            </AccordionContent>
           </AccordionItem>
         </Accordion>
       </SheetContent>
