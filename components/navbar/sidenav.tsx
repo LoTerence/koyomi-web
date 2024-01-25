@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { Menu as HamburgerIcon } from 'lucide-react';
 import {
   Sheet,
@@ -9,7 +10,14 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
-import { buttonVariants } from '../ui/button';
+import KoyomiLogo from '@/components/koyomi-logo';
+import { buttonVariants } from '@/components/ui/button';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
 
 export default function SideNav() {
   return (
@@ -19,14 +27,29 @@ export default function SideNav() {
       >
         <HamburgerIcon />
       </SheetTrigger>
-      <SheetContent className="w-[400px] sm:w-[540px]" side="left">
+      <SheetContent className="w-full sm:w-60" side="left">
         <SheetHeader>
-          <SheetTitle>Are you absolutely sure?</SheetTitle>
-          <SheetDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
-          </SheetDescription>
+          <Link href="/dashboard" className="mb-3">
+            <KoyomiLogo />
+          </Link>
+          <SheetTitle className="text-sm">Main Menu</SheetTitle>
         </SheetHeader>
+        <Accordion type="single" collapsible>
+          <AccordionItem value="accordion-1-item-1">
+            <AccordionTrigger>Plugins</AccordionTrigger>
+            <AccordionContent>Age Calculator</AccordionContent>
+            <AccordionContent>Blog</AccordionContent>
+            <AccordionContent>Pomodoro Timer</AccordionContent>
+          </AccordionItem>
+        </Accordion>
+        <Accordion type="single" collapsible>
+          <AccordionItem value="accordion-2-item-1">
+            <AccordionTrigger>Launcher</AccordionTrigger>
+            <AccordionContent>Commands</AccordionContent>
+            <AccordionContent>Settings</AccordionContent>
+            <AccordionContent>More Plugins</AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </SheetContent>
     </Sheet>
   );
