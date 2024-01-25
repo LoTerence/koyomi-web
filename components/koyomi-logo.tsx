@@ -1,12 +1,8 @@
 import Image from 'next/image';
-import { fontSerif } from '@/lib/fonts';
 
 const KoyomiLogo = () => {
   return (
-    <div
-      className={`flex flex-row items-center font-serif leading-none text-white 
-        ${fontSerif.className}`}
-    >
+    <div className="flex flex-row items-center font-serif leading-none text-white">
       <Image
         src="/images/catheadlogo.svg"
         height={24}
