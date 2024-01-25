@@ -30,13 +30,14 @@ export default function SideNav() {
       </SheetTrigger>
       <SheetContent className="w-full p-0 sm:w-60" side="left">
         <SheetHeader>
-          <Link
+          <SideNavLink
             href="/dashboard"
-            className="mt-6 rounded-md p-4 hover:bg-accent hover:text-accent-foreground"
+            className="mt-6 h-[72px] rounded-md p-4"
           >
             <KoyomiLogo />
-          </Link>
+          </SideNavLink>
         </SheetHeader>
+
         <Accordion type="multiple">
           <AccordionItem value="item-1" className="border-b-0">
             <AccordionTrigger className="rounded-md px-4 hover:bg-accent hover:text-accent-foreground">
@@ -48,33 +49,9 @@ export default function SideNav() {
               </div>
             </AccordionTrigger>
             <AccordionContent className="flex flex-col">
-              <Link
-                href="/"
-                className={cn(
-                  buttonVariants({ variant: 'ghost' }),
-                  'justify-start pl-12 hover:underline',
-                )}
-              >
-                Age Calculator
-              </Link>
-              <Link
-                href="/"
-                className={cn(
-                  buttonVariants({ variant: 'ghost' }),
-                  'justify-start pl-12 hover:underline',
-                )}
-              >
-                Blog
-              </Link>
-              <Link
-                href="/"
-                className={cn(
-                  buttonVariants({ variant: 'ghost' }),
-                  'justify-start pl-12 hover:underline',
-                )}
-              >
-                Pomodoro Timer
-              </Link>
+              <SideNavLink href="/">Age Calculator</SideNavLink>
+              <SideNavLink href="/">Blog</SideNavLink>
+              <SideNavLink href="/">Pomodoro Timer</SideNavLink>
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2" className="border-b-0">
@@ -87,33 +64,9 @@ export default function SideNav() {
               </div>
             </AccordionTrigger>
             <AccordionContent className="flex flex-col">
-              <Link
-                href="/"
-                className={cn(
-                  buttonVariants({ variant: 'ghost' }),
-                  'justify-start pl-12 hover:underline',
-                )}
-              >
-                Commands
-              </Link>
-              <Link
-                href="/"
-                className={cn(
-                  buttonVariants({ variant: 'ghost' }),
-                  'justify-start pl-12 hover:underline',
-                )}
-              >
-                Settings
-              </Link>
-              <Link
-                href="/"
-                className={cn(
-                  buttonVariants({ variant: 'ghost' }),
-                  'justify-start pl-12 hover:underline',
-                )}
-              >
-                Plugins
-              </Link>
+              <SideNavLink href="/">Commands</SideNavLink>
+              <SideNavLink href="/">Settings</SideNavLink>
+              <SideNavLink href="/">Plugins</SideNavLink>
             </AccordionContent>
           </AccordionItem>
         </Accordion>
@@ -121,3 +74,24 @@ export default function SideNav() {
     </Sheet>
   );
 }
+
+const SideNavLink = ({
+  href,
+  className,
+  children,
+}: React.PropsWithChildren<{
+  href: string;
+  className?: string;
+}>) => {
+  return (
+    <Link
+      href={href}
+      className={cn(
+        'inline-flex h-10 items-center justify-start whitespace-nowrap rounded-md py-2 pl-12 pr-4 text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
+        className,
+      )}
+    >
+      {children}
+    </Link>
+  );
+};
