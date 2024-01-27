@@ -51,7 +51,7 @@ export default function SideNav() {
             <AccordionContent className="flex flex-col">
               <SideNavLink href="/">Age Calculator</SideNavLink>
               <SideNavLink href="/">Blog</SideNavLink>
-              <SideNavLink href="/">Pomodoro Timer</SideNavLink>
+              <SideNavLink href="/dashboard/pomo">Pomodoro Timer</SideNavLink>
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2" className="border-b-0">
