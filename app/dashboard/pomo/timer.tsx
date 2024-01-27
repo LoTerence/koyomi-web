@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import usePomo, { sessions, formatTime, Session, TimeLeft } from './usePomo';
+import usePomo, { sessions, formatTime, Session } from './usePomo';
 
 export default function Timer() {
   const [activeSessionId, setActiveSessionId] = useState(0);
@@ -16,11 +16,7 @@ export default function Timer() {
 
   return (
     <section>
-      {/* <SessionBtnGroup
-        activeSessionId={activeSessionId}
-        setActiveSessionId={setActiveSessionId}
-        onSessionChange={onSessionChange}
-      /> */}
+      {/* Session Button Group */}
       <div className="mx-auto flex w-full max-w-lg shadow-[0_4px_9px_-4px_#3b71ca]">
         {sessions.map((session) => {
           const isActive = activeSessionId === session.id;
@@ -42,7 +38,17 @@ export default function Timer() {
         })}
       </div>
 
-      <TimerFace activeSessionId={activeSessionId} timeLeft={timeLeft} />
+      {/* Timer Face */}
+      <div className="my-4">
+        <div className="flex flex-col">
+          <div className="mx-auto text-xl">
+            {sessions[activeSessionId].minutes} mins
+          </div>
+          <div className="mx-auto text-[6rem] font-bold">
+            {formatTime(timeLeft)}
+          </div>
+        </div>
+      </div>
 
       {/* Timer Controls */}
       <div className="mx-auto flex w-full max-w-lg flex-wrap justify-center gap-x-4 sm:flex-nowrap">
@@ -71,59 +77,3 @@ export default function Timer() {
     </section>
   );
 }
-/* 
-const SessionBtnGroup = ({
-  activeSessionId,
-  setActiveSessionId,
-  onSessionChange,
-}) => {
-  const handleSessionButtonClick = (session: Session) => {
-    if (activeSessionId === session.id) return;
-    setActiveSessionId(session.id);
-    onSessionChange(session);
-  };
-
-  return (
-    <div className="mx-auto flex w-full max-w-lg shadow-[0_4px_9px_-4px_#3b71ca]">
-      {sessions.map((session) => {
-        const isActive = activeSessionId === session.id;
-        return (
-          <button
-            key={session.id}
-            type="button"
-            className={
-              (isActive
-                ? 'bg-primary-800 dark:bg-primary-700 '
-                : 'hover:bg-primary-600 focus:bg-primary-600 active:bg-primary-700 bg-primary focus:outline-none focus:ring-0 ') +
-              'border-primary-800 inline-block flex-1 border  px-4 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white transition duration-150 ease-in-out'
-            }
-            onClick={() => handleSessionButtonClick(session)}
-          >
-            {session.name}
-          </button>
-        );
-      })}
-    </div>
-  );
-};
- */
-const TimerFace = ({
-  activeSessionId,
-  timeLeft,
-}: {
-  activeSessionId: number;
-  timeLeft: TimeLeft;
-}) => {
-  return (
-    <div className="my-4">
-      <div className="flex flex-col">
-        <div className="mx-auto text-xl">
-          {sessions[activeSessionId].minutes} mins
-        </div>
-        <div className="mx-auto text-[6rem] font-bold">
-          {formatTime(timeLeft)}
-        </div>
-      </div>
-    </div>
-  );
-};
