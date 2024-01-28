@@ -27,7 +27,7 @@ export default function Timer() {
               key={session.id}
               type="button"
               className={clsx(
-                'h-12 flex-1 rounded-none border border-input px-4 uppercase text-white',
+                'h-12 flex-1 whitespace-normal rounded-none border border-input px-4 uppercase text-white',
                 isActive
                   ? 'bg-sky-900 hover:bg-sky-900'
                   : 'bg-sky-600 hover:bg-sky-600/90 active:bg-sky-700',
