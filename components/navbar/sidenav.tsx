@@ -41,7 +41,7 @@ export default function SideNav() {
         <Accordion type="multiple">
           <AccordionItem value="item-1" className="border-b-0">
             <AccordionTrigger className="rounded-md px-4 hover:bg-accent hover:text-accent-foreground">
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center gap-x-4">
                 <span>
                   <BoxIcon size={18} />
                 </span>
@@ -51,12 +51,12 @@ export default function SideNav() {
             <AccordionContent className="flex flex-col">
               <SideNavLink href="/">Age Calculator</SideNavLink>
               <SideNavLink href="/">Blog</SideNavLink>
-              <SideNavLink href="/">Pomodoro Timer</SideNavLink>
+              <SideNavLink href="/dashboard/pomo">Pomodoro Timer</SideNavLink>
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2" className="border-b-0">
             <AccordionTrigger className="rounded-md px-4 hover:bg-accent hover:text-accent-foreground">
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center gap-x-4">
                 <span>
                   <RocketIcon size={18} />
                 </span>

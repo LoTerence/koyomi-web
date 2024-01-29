@@ -13,9 +13,13 @@ const config = {
   theme: {
     container: {
       center: true,
-      padding: '2rem',
+      padding: '0.5rem',
       screens: {
-        '2xl': '1400px',
+        sm: '540px',
+        md: '720px',
+        lg: '960px',
+        xl: '1140px',
+        '2xl': '1320px',
       },
     },
     extend: {
@@ -79,7 +83,6 @@ const config = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
 } satisfies Config;
 
 export default config;

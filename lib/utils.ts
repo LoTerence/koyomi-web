@@ -9,3 +9,7 @@ export function cn(...inputs: ClassValue[]) {
   // twMerge: merge tailwind classes without style conflicts - returns a string of classNames
   return twMerge(clsx(inputs));
 }
+
+export function setPageTitle(str: string) {
+  document.title = str;
+}

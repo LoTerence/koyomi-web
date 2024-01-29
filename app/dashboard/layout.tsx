@@ -7,22 +7,21 @@ import { ModeToggle } from '@/components/ui/mode-toggle';
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <nav className="relative flex w-full items-center justify-between bg-gray-800 py-2 shadow-md">
-        <div className="mx-auto flex w-full flex-wrap items-center justify-start">
-          <div className="ml-2">
+      <div className="relative w-full bg-gray-800 shadow-md">
+        <nav className="container flex w-full items-center justify-between py-2">
+          <div className="mx-auto flex w-full flex-wrap items-center justify-start gap-x-2">
             <SideNav />
+            <Link href="/dashboard">
+              <KoyomiLogo />
+            </Link>
           </div>
-
-          <Link href="/dashboard" className="ml-2">
-            <KoyomiLogo />
-          </Link>
-        </div>
-        <div className="flex-grow"></div>
-        <div className="relative flex items-center space-x-2 px-3">
-          <ModeToggle />
-          <ProfileDropdown />
-        </div>
-      </nav>
+          <div className="flex-grow"></div>
+          <div className="relative flex items-center gap-x-2">
+            <ModeToggle />
+            <ProfileDropdown />
+          </div>
+        </nav>
+      </div>
 
       <main className="container">{children}</main>
     </>
