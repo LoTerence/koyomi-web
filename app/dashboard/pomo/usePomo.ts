@@ -95,10 +95,9 @@ export default function usePomo() {
     onTick();
   }, [timeLeft]);
 
-  const startTimer = (forcedStart = false) => {
-    if (!forcedStart) {
-      if (isTimeOver(timeLeft)) return;
-    }
+  const startTimer = () => {
+    if (isTimeOver(timeLeft)) return;
+
     if (intervalId.current) return;
     intervalId.current = setInterval(() => {
       setTimeLeft((prev) => decrementOneSecond(prev));
@@ -120,7 +119,14 @@ export default function usePomo() {
   const onSessionChange = (session: Session) => {
     sessionRef.current = sessions[session.id];
     setTimeLeft({ minutes: session.minutes, seconds: 0 });
-    startTimer(true);
+
+    const forceStartTimer = () => {
+      if (intervalId.current) return;
+      intervalId.current = setInterval(() => {
+        setTimeLeft((prev) => decrementOneSecond(prev));
+      }, 1000);
+    };
+    forceStartTimer();
   };
 
   return {
