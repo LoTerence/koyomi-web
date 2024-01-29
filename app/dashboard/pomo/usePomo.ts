@@ -1,10 +1,9 @@
 'use client';
 
 import { useState, useRef, useEffect, MutableRefObject } from 'react';
-// import {
-//   useDesktopNotification,
-//   showNotification,
-// } from '../../components/desktopNotification';
+import useDesktopNotification, {
+  notifyMe,
+} from '@/components/hooks/useDesktopNotification';
 import { setPageTitle } from '@/lib/utils';
 
 export type Session = {
@@ -64,7 +63,7 @@ export default function usePomo() {
   const sessionRef = useRef(sessions[0]);
   const alarmRef: MutableRefObject<HTMLAudioElement | null> = useRef(null);
   const intervalId: MutableRefObject<NodeJS.Timeout | null> = useRef(null);
-  // useDesktopNotification();
+  useDesktopNotification();
 
   useEffect(() => {
     const initAlarm = () => {
@@ -81,12 +80,12 @@ export default function usePomo() {
           stopTimer();
           alarmRef.current?.play();
           setPageTitle('Buzzzzzzz!');
-          /* showNotification({
+          notifyMe({
             title: 'Pomo time up',
             body: `Congrats! Your ${
               sessionRef.current.minutes
             } minute ${sessionRef.current.name.toLocaleLowerCase()} is over!`,
-          }); */
+          });
         };
         onTimeOver();
       } else if (timeLeft.minutes !== sessionRef.current.minutes) {
