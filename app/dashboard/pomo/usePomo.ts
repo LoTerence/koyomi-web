@@ -5,7 +5,7 @@ import { useState, useRef, useEffect, MutableRefObject } from 'react';
 //   useDesktopNotification,
 //   showNotification,
 // } from '../../components/desktopNotification';
-// import { setPageTitle } from '../../lib';
+import { setPageTitle } from '@/lib/utils';
 
 export type Session = {
   id: number;
@@ -80,7 +80,7 @@ export default function usePomo() {
         const onTimeOver = () => {
           stopTimer();
           alarmRef.current?.play();
-          // setPageTitle('Buzzzzzzz!');
+          setPageTitle('Buzzzzzzz!');
           /* showNotification({
             title: 'Pomo time up',
             body: `Congrats! Your ${
@@ -89,10 +89,9 @@ export default function usePomo() {
           }); */
         };
         onTimeOver();
-      }
-      /* else if (timeLeft.minutes !== sessionRef.current.minutes) {
+      } else if (timeLeft.minutes !== sessionRef.current.minutes) {
         setPageTitle(`(${formatTime(timeLeft)}) Pomodoro Timer`);
-      } */
+      }
     }
     onTick();
   }, [timeLeft]);
@@ -116,7 +115,7 @@ export default function usePomo() {
   const resetTimer = () => {
     stopTimer();
     setTimeLeft({ minutes: sessionRef.current.minutes, seconds: 0 });
-    // setPageTitle('Pomodoro Timer');
+    setPageTitle('Pomodoro Timer');
   };
 
   const onSessionChange = (session: Session) => {
