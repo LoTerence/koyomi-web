@@ -17,9 +17,9 @@ export default function Timer() {
   };
 
   return (
-    <section>
+    <section className="flex flex-col items-center gap-y-4">
       {/* Session Button Group */}
-      <div className="mx-auto flex w-full max-w-xl shadow-[0_4px_9px_-4px_#3b71ca]">
+      <div className="flex w-full max-w-xl shadow-[0_4px_9px_-4px_#3b71ca]">
         {sessions.map((session) => {
           const isActive = activeSessionId === session.id;
           return (
@@ -41,17 +41,13 @@ export default function Timer() {
       </div>
 
       {/* Timer Face */}
-      <div className="my-4 flex flex-col">
-        <div className="mx-auto text-xl">
-          {sessions[activeSessionId].minutes} mins
-        </div>
-        <div className="mx-auto text-[6rem] font-bold">
-          {formatTime(timeLeft)}
-        </div>
+      <div className="flex flex-col items-center">
+        <div className="text-xl">{sessions[activeSessionId].minutes} mins</div>
+        <div className="text-[6rem] font-bold">{formatTime(timeLeft)}</div>
       </div>
 
       {/* Timer Controls */}
-      <div className="mx-auto flex w-full max-w-xl flex-wrap justify-center gap-x-4 sm:flex-nowrap">
+      <div className="flex w-full max-w-xl flex-wrap justify-center gap-x-4 sm:flex-nowrap">
         <Button
           size="lg"
           className="w-full bg-green-600 text-xl text-white hover:bg-green-600/90 sm:flex-1"

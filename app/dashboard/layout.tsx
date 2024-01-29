@@ -8,18 +8,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <div className="relative w-full bg-gray-800 shadow-md">
-        <nav className="container flex w-full items-center justify-between py-2 ">
-          <div className="mx-auto flex w-full flex-wrap items-center justify-start">
-            <div className="ml-2">
-              <SideNav />
-            </div>
-
-            <Link href="/dashboard" className="ml-2">
+        <nav className="container flex w-full items-center justify-between py-2">
+          <div className="mx-auto flex w-full flex-wrap items-center justify-start gap-x-2">
+            <SideNav />
+            <Link href="/dashboard">
               <KoyomiLogo />
             </Link>
           </div>
           <div className="flex-grow"></div>
-          <div className="relative flex items-center space-x-2 px-3">
+          <div className="relative flex items-center gap-x-2">
             <ModeToggle />
             <ProfileDropdown />
           </div>
