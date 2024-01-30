@@ -36,7 +36,7 @@ export default function LoginForm() {
   }
 
   return (
-    <div className="flex-1 rounded-lg border-2 border-slate-800 px-6 pb-4 pt-4">
+    <div className="flex-1 rounded-lg border-2 border-slate-800 px-6 py-4">
       <h1 className="mb-3 text-2xl">Log in to continue to dashboard</h1>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
