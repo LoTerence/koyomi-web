@@ -61,8 +61,8 @@ export default function usePomo() {
     seconds: 0,
   } as TimeLeft);
   const sessionRef = useRef(sessions[0]);
-  const alarmRef: MutableRefObject<HTMLAudioElement | null> = useRef(null);
-  const intervalId: MutableRefObject<NodeJS.Timeout | null> = useRef(null);
+  const alarmRef = useRef<HTMLAudioElement | null>(null);
+  const intervalId = useRef<NodeJS.Timeout | null>(null);
   useDesktopNotification();
 
   useEffect(() => {
