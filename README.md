@@ -1,10 +1,11 @@
 ## Koyomi AI - Web
 
-Vision:
-- An AI-chat assisted productivity app, tailored for people with ADHD
+An AI-chat assisted productivity app, tailored for people with ADHD
 - based on a minimalist version of Getting Things Done (GTD) by David Allen
+- Developed with NextJS 14 App Router
 
-Developed with NextJS 14 App Router
+Next step:
+- integrate Supabase + postgres backend
 
 ## Getting Started
 
