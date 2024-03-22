@@ -1,8 +1,10 @@
-## Koyomi Web
+## Koyomi AI - Web
 
-For now this is going to be the same as ADHD-para but developed with NextJS 14 App Router 
+Vision:
+- An AI-chat assisted productivity app, tailored for people with ADHD
+- based on a minimalist version of Getting Things Done (GTD) by David Allen
 
-Our first goal is to eventually get it to become a UL-like desktop helper app
+Developed with NextJS 14 App Router
 
 ## Getting Started
 
